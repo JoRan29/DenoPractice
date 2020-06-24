@@ -14,3 +14,9 @@ const pascal = pascalCase(text);
 const snake = snakeCase(text);
 
 console.log(camel, param, pascal, snake);
+
+// catYou
+import { catYou } from "https://deno.land/x/cat_you/mod.ts";
+
+console.log(catYou());
+console.log(catYou("grumpy"));
