@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Harry",
+    "house": "Gryffindor",
+    "patronus": "Stag"
+  },
+  {
+    "name": "Hermione",
+    "house": "Gryffindor",
+    "patronus": "Otter"
+  },
+  {
+    "name": "Minerva",
+    "house": "Gryffindor",
+    "patronus": "Cat"
+  }
+]
