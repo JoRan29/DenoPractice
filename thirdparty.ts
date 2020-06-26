@@ -27,6 +27,13 @@ import {
   Context,
 } from "https://deno.land/x/abc@v1.0.0-rc10/mod.ts";
 
+import {
+  get_all_chars,
+  get_char,
+  create_char,
+  delete_char,
+} from "./controllers/characterController.ts";
+
 const app = new Application();
 
 // static files
@@ -41,22 +48,10 @@ app.get("/", async (ctx: Context) => {
 // api reuests
 
 app
-  .get("/characters", (ctx) => {
-    // ctx.string("All characters!");
-    ctx.json([{
-      "name": "Hermione",
-      "house": "Gryffindor",
-      "patronus": "Otter",
-    }, {
-      "name": "Minerva",
-      "house": "Gryffindor",
-      "patronus": "Cat",
-    }], 200);
-    console.log("All characters!");
-  }).get("/characters/:id", () => {})
-  .post("/characters", () => {})
-  .delete("characters/:id", () => {
-  });
+  .get("/characters", get_all_chars)
+  .get("/characters/:name", get_char)
+  .post("/characters", create_char)
+  .delete("characters/:name", delete_char);
 
 // listen to port
-app.start({ port: 3000 });
+app.start({ port: 3010 });
